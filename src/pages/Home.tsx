@@ -172,11 +172,7 @@ const Home = () => {
               </span>
             </div>
             
-            <h1 className="mb-12 animate-fade-in text-white" style={{ animationDelay: '0.2s' }}>
-              We Craft
-              <span className="block bg-gradient-to-r from-gray-400 to-gray-500 bg-clip-text text-transparent">Exceptional</span>
-              Digital Experiences
-            </h1>
+
             
             <p className="text-lead mb-16 max-w-3xl mx-auto animate-fade-in text-gray-100" style={{ animationDelay: '0.4s' }}>
               Where innovation meets elegance. We transform visionary ideas into 
