@@ -98,6 +98,15 @@ const Home = () => {
       accentColor: 'from-purple-400 to-purple-500',
       borderColor: 'border-purple-800/30',
       category: 'Furniture Design'
+    },
+    {
+      title: 'Perfect Events',
+      description: 'Transformez vos événements en moments inoubliables avec nos services de décoration personnalisés et élégants. Mariages, anniversaires, cérémonies - nous créons l\'ambiance parfaite pour vos occasions spéciales.',
+      url: 'https://perfe-dun.vercel.app/',
+      theme: 'bg-gradient-to-br from-slate-900 via-rose-900 to-slate-900',
+      accentColor: 'from-rose-400 to-rose-500',
+      borderColor: 'border-rose-800/30',
+      category: 'Event Decoration'
     }
   ]
 
