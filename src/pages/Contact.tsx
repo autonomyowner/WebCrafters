@@ -60,10 +60,22 @@ const Contact = () => {
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-gray-200 to-slate-900">
+    <div className="min-h-screen bg-black">
       {/* Hero Section */}
-      <section className="py-32 lg:py-40">
-        <div className="container">
+      <section className="min-h-screen py-32 lg:py-40 relative overflow-hidden flex items-center">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: 'url(/55.png)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            minHeight: '100%'
+          }}
+        />
+        
+        <div className="container relative z-10">
           <div className="text-center max-w-5xl mx-auto">
             <div className="mb-8">
               <span className="inline-block px-4 py-2 bg-gray-600/20 text-gray-400 text-sm font-medium tracking-wider uppercase mb-8">
