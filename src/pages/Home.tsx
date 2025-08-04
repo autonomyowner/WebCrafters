@@ -74,12 +74,12 @@ const Home = () => {
     },
     {
       title: 'SPEA Cup',
-      description: 'Elegant sports tournament platform with seamless user experience and real-time updates.',
+      description: 'Revolutionary e-learning platform that transforms traditional education into an engaging digital experience. Take your school to the next level with our comprehensive learning management system featuring interactive courses, real-time progress tracking, and seamless student-teacher collaboration.',
       url: 'https://spea-cup.vercel.app/',
       theme: 'bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900',
       accentColor: 'from-blue-400 to-blue-500',
       borderColor: 'border-blue-800/30',
-      category: 'Sports Platform'
+      category: 'E-Learning Platform'
     },
     {
       title: 'Ikhlas Automobiles',
