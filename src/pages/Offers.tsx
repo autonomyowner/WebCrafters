@@ -107,7 +107,7 @@ const Offers = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: 'url(/55.png)',
+            backgroundImage: 'url(/contactbg.avif)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
@@ -116,7 +116,7 @@ const Offers = () => {
         >
           {/* Lazy loading placeholder */}
           <img 
-            src="/55.png" 
+            src="/contactbg.avif" 
             alt="Background" 
             loading="lazy" 
             className="hidden"
