@@ -83,11 +83,7 @@ const Contact = () => {
               </span>
             </div>
             
-            <h1 className="mb-12 text-white">
-              Let's Create
-              <span className="block text-gray-400">Something</span>
-              Extraordinary
-            </h1>
+
             <p className="text-lead max-w-3xl mx-auto text-gray-100">
               Ready to transform your digital presence? Get in touch and let's discuss your project.
             </p>

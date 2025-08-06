@@ -89,10 +89,7 @@ const Work = () => {
               </span>
             </div>
             
-            <h1 className="mb-12 text-white">
-              Exceptional
-              <span className="block text-gray-400">Projects</span>
-            </h1>
+
             <p className="text-lead max-w-3xl mx-auto text-gray-100">
               Discover our latest projects and see how we transform visionary ideas 
               into extraordinary digital experiences.

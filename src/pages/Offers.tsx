@@ -123,11 +123,7 @@ const Offers = () => {
               </span>
             </div>
             
-            <h1 className="mb-12 animate-fade-in text-white" style={{ animationDelay: '0.2s' }}>
-              Strategic
-              <span className="block bg-gradient-to-r from-gray-400 to-gray-500 bg-clip-text text-transparent">Partnerships</span>
-              & Premium Services
-            </h1>
+
             
             <p className="text-lead mb-16 max-w-3xl mx-auto animate-fade-in text-gray-100" style={{ animationDelay: '0.4s' }}>
               Elevate your business with our comprehensive web development services. 

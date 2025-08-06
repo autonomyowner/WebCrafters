@@ -327,40 +327,7 @@ const Home = () => {
         </div>
       </section>
 
-      <div className="h-px bg-gradient-to-r from-transparent via-gray-600 to-transparent mx-8 my-16"></div>
 
-      {/* Testimonials Section */}
-      <section className="py-32">
-        <div className="container">
-          <div className="text-center mb-24 animate-fade-in">
-            <h2 className="mb-12 text-white">
-              Client Testimonials
-            </h2>
-            <p className="text-lead max-w-3xl mx-auto text-gray-100">
-              Don't just take our word for it. Here's what our clients have to say.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            {testimonials.map((testimonial, index) => (
-              <div key={testimonial.name} className="bg-slate-800/50 border border-gray-800/30 backdrop-blur-sm p-8 rounded-2xl animate-fade-in hover:bg-slate-800/70 transition-all duration-300" style={{ animationDelay: `${index * 0.2}s` }}>
-                <div className="flex justify-center mb-8">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-gray-400 fill-current" />
-                  ))}
-                </div>
-                <p className="text-gray-200 mb-8 italic leading-relaxed text-lg">"{testimonial.content}"</p>
-                <div>
-                  <div className="font-semibold text-white mb-2 text-lg">{testimonial.name}</div>
-                  <div className="text-sm text-gray-300">{testimonial.role}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <div className="h-px bg-gradient-to-r from-transparent via-gray-600 to-transparent mx-8 my-16"></div>
 
       {/* Why Choose Us Section */}
       <section className="py-32">
