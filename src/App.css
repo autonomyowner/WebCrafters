@@ -600,6 +600,49 @@ select.input {
   .premium-card:active {
     transform: scale(0.98);
   }
+  
+  /* Mobile menu optimizations */
+  .lg\:hidden {
+    will-change: transform, opacity;
+  }
+  
+  /* Reduce backdrop blur on mobile for better performance */
+  .backdrop-blur-xl {
+    backdrop-filter: blur(8px);
+  }
+  
+  .backdrop-blur-md {
+    backdrop-filter: blur(4px);
+  }
+  
+  /* Optimize transitions for mobile */
+  * {
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Reduce animation complexity on mobile */
+  .animate-fade-in {
+    animation-duration: 0.3s;
+  }
+  
+  .animate-slide-in {
+    animation-duration: 0.3s;
+  }
+  
+  /* Disable hover effects on mobile */
+  .group:hover .group-hover\:scale-110 {
+    transform: none;
+  }
+  
+  .group:hover .group-hover\:translate-x-1 {
+    transform: none;
+  }
+  
+  /* Optimize touch targets */
+  button, a, input, textarea, select {
+    min-height: 44px;
+    min-width: 44px;
+  }
 }
 
 /* High contrast mode support */

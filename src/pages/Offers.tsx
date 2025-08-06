@@ -153,6 +153,25 @@ const Offers = () => {
             <p className="text-lead max-w-3xl mx-auto text-green-100">
               Choose the perfect package for your project needs. All prices are base rates and may vary based on complexity.
             </p>
+            <p className="text-sm max-w-2xl mx-auto text-green-200 mt-4 font-medium">
+              One-time payment and the website is totally yours.
+            </p>
+            
+            {/* Domain Pricing Cards */}
+            <div className="flex flex-wrap justify-center gap-4 mt-8">
+              <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-full px-6 py-3 text-white text-center shadow-lg border border-blue-500/30">
+                <div className="text-lg font-bold">.com</div>
+                <div className="text-sm opacity-90">$15/year</div>
+              </div>
+              <div className="bg-gradient-to-r from-purple-600 to-purple-700 rounded-full px-6 py-3 text-white text-center shadow-lg border border-purple-500/30">
+                <div className="text-lg font-bold">.net</div>
+                <div className="text-sm opacity-90">$13/year</div>
+              </div>
+              <div className="bg-gradient-to-r from-green-600 to-green-700 rounded-full px-6 py-3 text-white text-center shadow-lg border border-green-500/30">
+                <div className="text-lg font-bold">.shop</div>
+                <div className="text-sm opacity-90">$10/year</div>
+              </div>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -317,6 +336,80 @@ const Offers = () => {
                   <li>• Ongoing maintenance and support packages available</li>
                   <li>• Volume discounts available for multiple projects and long-term partnerships</li>
                 </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Payment Methods */}
+      <section className="py-16">
+        <div className="container">
+          <div className="bg-slate-800/50 border border-green-600/30 p-8 rounded-2xl">
+            <div className="text-center mb-8">
+              <h3 className="text-xl font-semibold text-white mb-4">Accepted Payment Methods</h3>
+              <p className="text-green-200">Secure and convenient payment options</p>
+            </div>
+            <div className="flex flex-wrap justify-center items-center gap-6">
+              {/* CCP */}
+              <div className="flex flex-col items-center">
+                <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full flex items-center justify-center mb-2">
+                  <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                  </svg>
+                </div>
+                <span className="text-xs text-green-200">CCP</span>
+              </div>
+              
+              {/* Baridi Mob */}
+              <div className="flex flex-col items-center">
+                <div className="w-12 h-12 bg-gradient-to-r from-green-600 to-green-700 rounded-full flex items-center justify-center mb-2">
+                  <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/>
+                    <path d="M12 6c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+                  </svg>
+                </div>
+                <span className="text-xs text-green-200">Baridi Mob</span>
+              </div>
+              
+              {/* Redotpay */}
+              <div className="flex flex-col items-center">
+                <div className="w-12 h-12 bg-gradient-to-r from-red-600 to-red-700 rounded-full flex items-center justify-center mb-2">
+                  <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/>
+                  </svg>
+                </div>
+                <span className="text-xs text-green-200">Redotpay</span>
+              </div>
+              
+              {/* Paysera */}
+              <div className="flex flex-col items-center">
+                <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-purple-700 rounded-full flex items-center justify-center mb-2">
+                  <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                  </svg>
+                </div>
+                <span className="text-xs text-green-200">Paysera</span>
+              </div>
+              
+              {/* PayPal */}
+              <div className="flex flex-col items-center">
+                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center mb-2">
+                  <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm-5 14H4v-4h11v4zm0-5H4V9h11v4zm5 5h-4V9h4v9z"/>
+                  </svg>
+                </div>
+                <span className="text-xs text-green-200">PayPal</span>
+              </div>
+              
+              {/* Wise */}
+              <div className="flex flex-col items-center">
+                <div className="w-12 h-12 bg-gradient-to-r from-teal-600 to-teal-700 rounded-full flex items-center justify-center mb-2">
+                  <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                  </svg>
+                </div>
+                <span className="text-xs text-green-200">Wise</span>
               </div>
             </div>
           </div>

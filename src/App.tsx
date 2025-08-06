@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import Work from './pages/Work'
 import Contact from './pages/Contact'
 import Offers from './pages/Offers'
+import Templates from './pages/Templates'
 import SpecialOffer from './pages/SpecialOffer'
 import OfferCard from './components/OfferCard'
 import './App.css'
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/work" element={<Work />} />
           <Route path="/offers" element={<Offers />} />
+          <Route path="/templates" element={<Templates />} />
           <Route path="/special-offer" element={<SpecialOffer />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/offer" element={<OfferCard />} />
