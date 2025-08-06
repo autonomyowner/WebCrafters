@@ -43,21 +43,21 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-8 bg-gradient-to-r from-white to-gray-100 bg-clip-text text-transparent">Contact</h3>
             <div className="space-y-6 text-gray-200">
               <div className="flex items-center space-x-4 group">
-                <div className="w-10 h-10 bg-gradient-to-br from-gray-600 to-gray-700 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-10 h-10 bg-gradient-to-br from-slate-900 via-amber-500 to-slate-900 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
                   <Phone className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <div className="font-semibold text-white">Azeedine Zellag</div>
-                  <a href="tel:+213797339451" className="group-hover:text-white transition-colors duration-300">0797339451</a>
+                  <div className="font-semibold bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 bg-clip-text text-transparent">Azeedine Zellag</div>
+                  <a href="tel:+213797339451" className="bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 bg-clip-text text-transparent group-hover:text-blue-200 transition-colors duration-300">0797339451</a>
                 </div>
               </div>
               <div className="flex items-center space-x-4 group">
-                <div className="w-10 h-10 bg-gradient-to-br from-gray-600 to-gray-700 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-10 h-10 bg-gradient-to-br from-slate-900 via-amber-500 to-slate-900 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
                   <Phone className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <div className="font-semibold text-white">Belkasm Islam</div>
-                  <a href="tel:+213676610457" className="group-hover:text-white transition-colors duration-300">0676610457</a>
+                  <div className="font-semibold bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 bg-clip-text text-transparent">Belkasm Islam</div>
+                  <a href="tel:+213676610457" className="bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 bg-clip-text text-transparent group-hover:text-blue-200 transition-colors duration-300">0676610457</a>
                 </div>
               </div>
               <div className="flex items-center space-x-4 group">
