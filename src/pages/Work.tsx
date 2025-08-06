@@ -66,173 +66,62 @@ const Work = () => {
   ]
 
   return (
-    <div className="min-h-screen bg-black">
-      {/* Hero Section */}
-      <section className="min-h-screen py-32 lg:py-40 relative overflow-hidden flex items-center">
-        {/* Background Image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: 'url(/55.png)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-            minHeight: '100%'
-          }}
-        />
-        
-        <div className="container relative z-10">
-          <div className="text-center max-w-5xl mx-auto">
-            <div className="mb-8">
-              <span className="inline-block px-4 py-2 bg-gray-600/20 text-gray-400 text-sm font-medium tracking-wider uppercase mb-8">
-                Our Portfolio
-              </span>
+    <div className="min-h-screen bg-black relative overflow-hidden">
+      {/* Background Video - Full Page */}
+      <video 
+        className="fixed inset-0 w-full h-full object-cover z-0 opacity-50"
+        autoPlay 
+        muted 
+        loop 
+        playsInline
+      >
+        <source src="/bg gif.mp4" type="video/mp4" />
+      </video>
+      
+      {/* Content Overlay */}
+      <div className="relative z-10">
+        {/* Hero Section */}
+        <section className="min-h-screen py-32 lg:py-40 flex items-center">
+          <div className="container">
+            <div className="text-center max-w-5xl mx-auto">
+              <div className="mb-8">
+                <span className="inline-block px-4 py-2 bg-black/50 backdrop-blur-sm text-white text-sm font-medium tracking-wider uppercase mb-8 rounded-full border border-white/20">
+                  Our Portfolio
+                </span>
+              </div>
+              
+              <h1 className="mb-12 text-white text-4xl lg:text-6xl font-bold">
+                Our Work
+              </h1>
+
+              <p className="text-lead max-w-3xl mx-auto text-white/90">
+                Discover our latest projects and see how we transform visionary ideas 
+                into extraordinary digital experiences.
+              </p>
             </div>
-            
-
-            <p className="text-lead max-w-3xl mx-auto text-gray-100">
-              Discover our latest projects and see how we transform visionary ideas 
-              into extraordinary digital experiences.
-            </p>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Featured Projects */}
-      <section className="py-32">
-        <div className="container">
-          <div className="text-center mb-24">
-            <h2 className="mb-12 text-white">
-              Featured Work
-            </h2>
-            <p className="text-lead max-w-3xl mx-auto text-green-100">
-              Our most recent and impactful projects that showcase our expertise and creativity.
-            </p>
+        
+
+        {/* CTA Section */}
+        <section className="py-32">
+          <div className="container">
+            <div className="max-w-4xl mx-auto text-center">
+              <h2 className="mb-12 text-white text-3xl lg:text-4xl font-bold">
+                Ready to Start Your Project?
+              </h2>
+              <p className="text-lead mb-16 max-w-2xl mx-auto text-white/90">
+                Let's create something amazing together. Get in touch to discuss your project.
+              </p>
+              <Link to="/contact" className="group relative inline-flex items-center justify-center w-20 h-20 bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white rounded-full transition-all duration-300 transform hover:scale-110 hover:shadow-2xl border-2 border-white/30 shadow-lg">
+                <ExternalLink className="w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-white/30 rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+              </Link>
+            </div>
           </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-24">
-            {projects.filter(p => p.featured).map((project) => (
-              <div key={project.id} className="group">
-                <div className="relative overflow-hidden mb-8">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute top-6 right-6">
-                    <span className="bg-slate-800/90 backdrop-blur-sm text-white px-4 py-2 text-sm font-medium border border-green-800/30">
-                      {project.category}
-                    </span>
-                  </div>
-                </div>
-                <div>
-                  <h3 className="text-2xl font-semibold text-white mb-6">
-                    {project.title}
-                  </h3>
-                  <p className="text-green-200 mb-8 leading-relaxed text-lg">
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-3 mb-8">
-                    {project.technologies.map((tech) => (
-                      <span
-                        key={tech}
-                        className="bg-slate-800/50 text-green-200 px-4 py-2 text-sm font-medium border border-green-800/30"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                  <a
-                    href={project.link}
-                    className="inline-flex items-center text-green-400 hover:text-green-300 font-medium transition-colors duration-300"
-                  >
-                    View Project
-                    <ExternalLink className="w-5 h-5 ml-2" />
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <div className="h-px bg-gradient-to-r from-transparent via-green-600 to-transparent mx-8 my-16"></div>
-
-      {/* All Projects */}
-      <section className="py-32">
-        <div className="container">
-          <div className="text-center mb-24">
-            <h2 className="mb-12 text-white">
-              All Projects
-            </h2>
-            <p className="text-lead max-w-3xl mx-auto text-green-100">
-              A comprehensive showcase of our diverse portfolio and technical expertise.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-            {projects.filter(p => !p.featured).map((project) => (
-              <div key={project.id} className="group">
-                <div className="relative overflow-hidden mb-8">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute top-4 right-4">
-                    <span className="bg-slate-800/90 backdrop-blur-sm text-white px-3 py-1 text-sm font-medium border border-green-800/30">
-                      {project.category}
-                    </span>
-                  </div>
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-white mb-4">
-                    {project.title}
-                  </h3>
-                  <p className="text-green-200 mb-6 leading-relaxed">
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {project.technologies.map((tech) => (
-                      <span
-                        key={tech}
-                        className="bg-slate-800/50 text-green-200 px-3 py-1 text-sm border border-green-800/30"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                  <a
-                    href={project.link}
-                    className="inline-flex items-center text-green-400 hover:text-green-300 font-medium transition-colors duration-300"
-                  >
-                    View Project
-                    <ExternalLink className="w-4 h-4 ml-2" />
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-32">
-        <div className="container">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="mb-12 text-white">
-              Ready to Start Your Project?
-            </h2>
-            <p className="text-lead mb-16 max-w-2xl mx-auto text-green-100">
-              Let's create something amazing together. Get in touch to discuss your project.
-            </p>
-            <Link to="/contact" className="group relative inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-500 hover:to-green-600 text-white rounded-full transition-all duration-300 transform hover:scale-110 hover:shadow-2xl border-2 border-green-500/30 shadow-lg">
-              <ExternalLink className="w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" />
-              <div className="absolute inset-0 bg-gradient-to-r from-green-400 to-green-500 rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
-            </Link>
-          </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </div>
   )
 }

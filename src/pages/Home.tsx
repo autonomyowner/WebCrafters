@@ -107,6 +107,15 @@ const Home = () => {
       accentColor: 'from-rose-400 to-rose-500',
       borderColor: 'border-rose-800/30',
       category: 'Event Decoration'
+    },
+    {
+      title: 'Elghella',
+      description: 'Modern digital platform showcasing innovative solutions with cutting-edge technology and elegant design. Experience the future of digital excellence with our comprehensive web development services.',
+      url: 'https://elghella-v16.vercel.app/',
+      theme: 'bg-gradient-to-br from-slate-900 via-teal-900 to-slate-900',
+      accentColor: 'from-teal-400 to-teal-500',
+      borderColor: 'border-teal-800/30',
+      category: 'Digital Platform'
     }
   ]
 
@@ -287,20 +296,41 @@ const Home = () => {
                       </div>
                     </div>
                     <div className="relative h-96 w-full">
-                      <iframe
-                        src={project.url}
-                        className="w-full h-full border-0"
-                        title={`Live preview of ${project.title}`}
-                        loading="lazy"
-                        sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox"
-                        style={{
-                          background: 'white',
-                          transform: 'scale(0.8)',
-                          transformOrigin: 'top left',
-                          width: '125%',
-                          height: '125%'
-                        }}
-                      />
+                      {project.url.includes('elghella-v16.vercel.app') ? (
+                        <div className="w-full h-full bg-gradient-to-br from-slate-800 to-slate-900 rounded-lg flex items-center justify-center">
+                          <div className="text-center">
+                            <div className="w-16 h-16 bg-teal-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                              <Globe className="w-8 h-8 text-teal-400" />
+                            </div>
+                            <h3 className="text-white text-lg font-semibold mb-2">Live Preview Unavailable</h3>
+                            <p className="text-gray-300 text-sm mb-4">This website doesn't allow embedding for security reasons</p>
+                            <a 
+                              href={project.url} 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center space-x-2 px-4 py-2 bg-teal-600 hover:bg-teal-700 text-white rounded-lg transition-colors duration-300"
+                            >
+                              <span>View Website</span>
+                              <ExternalLink className="w-4 h-4" />
+                            </a>
+                          </div>
+                        </div>
+                      ) : (
+                        <iframe
+                          src={project.url}
+                          className="w-full h-full border-0"
+                          title={`Live preview of ${project.title}`}
+                          loading="lazy"
+                          sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox"
+                          style={{
+                            background: 'white',
+                            transform: 'scale(0.8)',
+                            transformOrigin: 'top left',
+                            width: '125%',
+                            height: '125%'
+                          }}
+                        />
+                      )}
                     </div>
                   </div>
                 </div>
