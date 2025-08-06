@@ -103,7 +103,7 @@ const Offers = () => {
     <div className="min-h-screen bg-black">
       {/* Hero Section */}
       <section className="min-h-screen py-32 lg:py-40 relative overflow-hidden flex items-center">
-        {/* Background Image */}
+        {/* Background Image with Lazy Loading */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
@@ -113,7 +113,21 @@ const Offers = () => {
             backgroundRepeat: 'no-repeat',
             minHeight: '100%'
           }}
-        />
+        >
+          {/* Lazy loading placeholder */}
+          <img 
+            src="/55.png" 
+            alt="Background" 
+            loading="lazy" 
+            className="hidden"
+            onLoad={(e) => {
+              const target = e.target as HTMLImageElement;
+              if (target.parentElement) {
+                target.parentElement.style.backgroundImage = `url(${target.src})`;
+              }
+            }}
+          />
+        </div>
         
         <div className="container relative z-10">
           <div className="text-center max-w-5xl mx-auto">

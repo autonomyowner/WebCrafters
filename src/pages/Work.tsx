@@ -1,5 +1,6 @@
 import { ExternalLink } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import LazyImage from '../components/LazyImage'
 
 const Work = () => {
   const projects = [
@@ -67,13 +68,14 @@ const Work = () => {
 
   return (
     <div className="min-h-screen bg-black relative overflow-hidden">
-      {/* Background Video - Full Page */}
+      {/* Background Video - Full Page with Lazy Loading */}
       <video 
         className="fixed inset-0 w-full h-full object-cover z-0 opacity-50"
         autoPlay 
         muted 
         loop 
         playsInline
+        preload="metadata"
       >
         <source src="/bg gif.mp4" type="video/mp4" />
       </video>
@@ -102,7 +104,79 @@ const Work = () => {
           </div>
         </section>
 
-        
+        {/* Projects Grid Section */}
+        <section className="py-32">
+          <div className="container">
+            <div className="text-center mb-24">
+              <h2 className="mb-12 text-white text-3xl lg:text-4xl font-bold">
+                Featured Projects
+              </h2>
+              <p className="text-lead max-w-3xl mx-auto text-white/90">
+                Explore our diverse portfolio of successful projects across different industries.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {projects.map((project, index) => (
+                <div 
+                  key={project.id} 
+                  className="group relative bg-white/10 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/20 hover:border-white/40 transition-all duration-300 hover:transform hover:scale-105"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  {/* Project Image with Lazy Loading */}
+                  <div className="relative h-48 overflow-hidden">
+                    <LazyImage 
+                      src={project.image} 
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    
+                    {/* Category Badge */}
+                    <div className="absolute top-4 left-4">
+                      <span className="px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs font-medium rounded-full border border-white/30">
+                        {project.category}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Project Content */}
+                  <div className="p-6">
+                    <h3 className="text-xl font-semibold text-white mb-3">
+                      {project.title}
+                    </h3>
+                    <p className="text-gray-300 text-sm mb-4 leading-relaxed">
+                      {project.description}
+                    </p>
+                    
+                    {/* Technologies */}
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {project.technologies.map((tech, techIndex) => (
+                        <span 
+                          key={techIndex}
+                          className="px-2 py-1 bg-white/10 text-white text-xs rounded border border-white/20"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+
+                    {/* Project Link */}
+                    <a 
+                      href={project.link} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="group/link inline-flex items-center space-x-2 text-white hover:text-gray-200 transition-colors duration-300"
+                    >
+                      <span className="text-sm font-medium">View Project</span>
+                      <ExternalLink className="w-4 h-4 group-hover/link:translate-x-1 transition-transform duration-300" />
+                    </a>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
         {/* CTA Section */}
         <section className="py-32">

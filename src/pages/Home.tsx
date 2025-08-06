@@ -162,7 +162,7 @@ const Home = () => {
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-gray-200 to-slate-900">
       {/* Hero Section */}
       <section className="py-32 lg:py-40 relative overflow-hidden">
-        {/* Background Image */}
+        {/* Background Image with Lazy Loading */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
@@ -171,7 +171,21 @@ const Home = () => {
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat'
           }}
-        />
+        >
+          {/* Lazy loading placeholder */}
+          <img 
+            src="/background.avif" 
+            alt="Background" 
+            loading="lazy" 
+            className="hidden"
+            onLoad={(e) => {
+              const target = e.target as HTMLImageElement;
+              if (target.parentElement) {
+                target.parentElement.style.backgroundImage = `url(${target.src})`;
+              }
+            }}
+          />
+        </div>
         
         <div className="container relative z-10">
           <div className="text-center max-w-5xl mx-auto">
