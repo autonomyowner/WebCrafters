@@ -3,7 +3,6 @@ import {
   ArrowRight,
   Users,
   Shield,
-  Star,
   Award,
   Zap,
   Globe,
@@ -137,6 +136,7 @@ const Home = () => {
     }
   ]
 
+  /* Testimonials temporarily unused
   const testimonials = [
     {
       name: 'Alexander Chen',
@@ -157,9 +157,10 @@ const Home = () => {
       rating: 5
     }
   ]
+  */
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-gray-200 to-slate-900">
+    <div className="min-h-screen bg-dark-gradient bg-mesh relative overflow-hidden">
       {/* Hero Section */}
       <section className="py-32 lg:py-40 relative overflow-hidden">
         {/* Background Image with Lazy Loading */}
@@ -189,42 +190,52 @@ const Home = () => {
         
         <div className="container relative z-10">
           <div className="text-center max-w-5xl mx-auto">
-            <div className="mb-8 animate-fade-in">
-              <span className="inline-block px-4 py-2 bg-gradient-to-r from-gray-600 to-gray-700 text-white text-sm font-medium tracking-wider uppercase mb-8 rounded-full shadow-lg">
-                Elite Web Development
+            <div className="mb-12 animate-fade-in">
+              <span className="inline-block px-6 py-3 glass-vibrant text-white text-sm font-semibold tracking-wider uppercase mb-8 rounded-full shadow-glow animate-pulse-glow">
+                ⚡ Elite Web Development
               </span>
             </div>
             
 
+            <h1 className="text-heading-xl mb-8 max-w-4xl mx-auto animate-fade-in-up text-white text-shimmer" style={{ animationDelay: '0.2s' }}>
+              Crafting Digital
+              <span className="gradient-text-electric block">Masterpieces</span>
+              That Convert
+            </h1>
             
-            <p className="text-lead mb-16 max-w-3xl mx-auto animate-fade-in text-gray-100" style={{ animationDelay: '0.4s' }}>
+            <p className="text-lead mb-16 max-w-3xl mx-auto animate-fade-in-up text-neutral-200" style={{ animationDelay: '0.4s' }}>
               Where innovation meets elegance. We transform visionary ideas into 
               extraordinary digital realities that captivate and convert.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-8 justify-center mb-20 animate-fade-in" style={{ animationDelay: '0.6s' }}>
-              <Link to="/contact" className="group relative inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-500 hover:to-gray-600 text-white rounded-full transition-all duration-300 transform hover:scale-110 hover:shadow-2xl border-2 border-gray-500/30 shadow-lg">
-                <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" />
-                <div className="absolute inset-0 bg-gradient-to-r from-gray-400 to-gray-500 rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+            <div className="flex flex-col sm:flex-row gap-8 justify-center mb-20 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
+              <Link to="/contact" className="btn-cta group">
+                <span className="relative z-10 flex items-center gap-3">
+                  Start Your Project
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                </span>
               </Link>
-              <Link to="/work" className="px-8 py-4 bg-transparent border border-gray-500/30 text-gray-100 hover:text-white hover:bg-gray-600/20 font-medium rounded-lg transition-all duration-300 transform hover:scale-105">
+              <Link to="/work" className="btn-ghost">
                 <span className="relative z-10">View Our Work</span>
               </Link>
             </div>
 
-            {/* Stats */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-12 animate-fade-in" style={{ animationDelay: '0.8s' }}>
-              <div className="text-center group">
-                <div className="text-4xl font-bold bg-gradient-to-r from-gray-400 to-gray-500 bg-clip-text text-transparent mb-3 group-hover:scale-110 transition-transform duration-300">500+</div>
-                <div className="text-gray-200 font-medium">Projects Delivered</div>
+            {/* Enhanced Stats */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-12 animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
+              <div className="text-center group interactive-soft">
+                <div className="text-5xl font-bold gradient-text-electric mb-4 animate-bounce-gentle">500+</div>
+                <div className="text-neutral-300 font-semibold text-lg">Projects Delivered</div>
+                <div className="w-16 h-1 bg-gradient-electric rounded-full mx-auto mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
-              <div className="text-center group">
-                <div className="text-4xl font-bold bg-gradient-to-r from-gray-400 to-gray-500 bg-clip-text text-transparent mb-3 group-hover:scale-110 transition-transform duration-300">99%</div>
-                <div className="text-gray-200 font-medium">Client Satisfaction</div>
+              <div className="text-center group interactive-soft">
+                <div className="text-5xl font-bold gradient-text-emerald mb-4 animate-bounce-gentle" style={{ animationDelay: '0.2s' }}>99%</div>
+                <div className="text-neutral-300 font-semibold text-lg">Client Satisfaction</div>
+                <div className="w-16 h-1 bg-gradient-emerald rounded-full mx-auto mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
-              <div className="text-center group">
-                <div className="text-4xl font-bold bg-gradient-to-r from-gray-400 to-gray-500 bg-clip-text text-transparent mb-3 group-hover:scale-110 transition-transform duration-300">24/7</div>
-                <div className="text-gray-200 font-medium">Premium Support</div>
+              <div className="text-center group interactive-soft">
+                <div className="text-5xl font-bold gradient-text-sunset mb-4 animate-bounce-gentle" style={{ animationDelay: '0.4s' }}>24/7</div>
+                <div className="text-neutral-300 font-semibold text-lg">Premium Support</div>
+                <div className="w-16 h-1 bg-gradient-sunset rounded-full mx-auto mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
             </div>
           </div>
@@ -232,29 +243,37 @@ const Home = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-32">
-        <div className="container">
+      <section className="section-padding bg-grid">
+        <div className="container-responsive">
           <div className="text-center mb-24 animate-fade-in">
-            <h2 className="mb-12 text-white">
+            <h2 className="text-heading-lg mb-8 text-white">
               Comprehensive Solutions
             </h2>
-            <p className="text-lead max-w-3xl mx-auto text-gray-100">
+            <p className="text-lead max-w-4xl mx-auto text-neutral-200">
               We provide end-to-end digital solutions that elevate your brand and drive exceptional results.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-auto-fit gap-8">
             {services.map((service, index) => {
               const IconComponent = service.icon
+              const cardClasses = [
+                'card-electric',
+                'card-emerald', 
+                'card-sunset',
+                'card-cosmic',
+                'card-electric',
+                'card-emerald'
+              ]
               return (
-                <div key={service.title} className={`${service.theme} border ${service.borderColor} backdrop-blur-sm p-8 rounded-2xl text-center group animate-fade-in hover:scale-105 transition-all duration-300 shadow-2xl`} style={{ animationDelay: `${index * 0.1}s` }}>
-                  <div className="w-16 h-16 bg-gradient-to-br from-white/20 to-white/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <IconComponent className="w-8 h-8 text-white" />
+                <div key={service.title} className={`${cardClasses[index % cardClasses.length]} text-center animate-fade-in-up interactive`} style={{ animationDelay: `${index * 0.1}s` }}>
+                  <div className="w-20 h-20 glass-subtle rounded-2xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform duration-300 shadow-glow">
+                    <IconComponent className="w-10 h-10 text-white" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-6 text-white">
+                  <h3 className="text-heading-sm mb-6 text-white">
                     {service.title}
                   </h3>
-                  <p className="text-white/80 leading-relaxed">
+                  <p className="text-body text-neutral-300 leading-relaxed">
                     {service.description}
                   </p>
                 </div>
@@ -264,35 +283,35 @@ const Home = () => {
         </div>
       </section>
 
-      <div className="h-px bg-gradient-to-r from-transparent via-gray-600 to-transparent mx-8 my-16"></div>
+      <div className="h-px bg-gradient-to-r from-transparent via-electric-500 to-transparent mx-8 my-24 shadow-glow"></div>
 
       {/* Portfolio Section */}
-      <section className="py-32">
-        <div className="container">
+      <section className="section-padding">
+        <div className="container-responsive">
           <div className="text-center mb-24 animate-fade-in">
-            <h2 className="mb-12 text-white">
-              Comprehensive Digital Solutions
+            <h2 className="text-heading-lg mb-8 text-white">
+              Our Digital Portfolio
             </h2>
-            <p className="text-lead max-w-3xl mx-auto text-gray-100">
+            <p className="text-lead max-w-4xl mx-auto text-neutral-200">
               Explore our diverse portfolio of digital solutions, each crafted with unique themes and cutting-edge technology.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-16">
+          <div className="space-content">
             {portfolioProjects.map((project, index) => (
-              <div key={project.title} className={`${project.theme} border ${project.borderColor} backdrop-blur-sm p-8 rounded-3xl group animate-fade-in hover:scale-105 transition-all duration-500 shadow-2xl`} style={{ animationDelay: `${index * 0.2}s` }}>
-                <div className="flex items-start justify-between mb-8">
+              <div key={project.title} className="glass-card p-12 group animate-fade-in-up interactive-soft" style={{ animationDelay: `${index * 0.2}s` }}>
+                <div className="flex items-start justify-between mb-10">
                   <div>
-                    <span className="inline-block px-3 py-1 bg-white/10 text-white text-xs font-medium rounded-full mb-4">
+                    <span className="inline-block px-4 py-2 glass-vibrant text-white text-sm font-semibold rounded-full mb-6">
                       {project.category}
                     </span>
-                    <h3 className="text-3xl font-bold text-white mb-4">{project.title}</h3>
-                    <p className="text-white/80 mb-6 leading-relaxed text-lg max-w-2xl">
+                    <h3 className="text-heading-md gradient-text-electric mb-6">{project.title}</h3>
+                    <p className="text-body text-neutral-300 mb-8 leading-relaxed max-w-3xl">
                       {project.description}
                     </p>
                   </div>
-                  <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <Globe className="w-8 h-8 text-white" />
+                  <div className="w-20 h-20 glass-subtle rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-glow">
+                    <Globe className="w-10 h-10 text-electric-400" />
                   </div>
                 </div>
                 
@@ -350,19 +369,21 @@ const Home = () => {
                 </div>
                 
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-3 h-3 bg-gray-400 rounded-full animate-pulse"></div>
-                    <span className="text-white/70 text-sm">Live Project</span>
+                  <div className="flex items-center space-x-3">
+                    <div className="w-4 h-4 bg-emerald-400 rounded-full animate-pulse shadow-glow-emerald"></div>
+                    <span className="text-neutral-300 font-medium">Live Project</span>
                   </div>
                   
                   <a 
                     href={project.url} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="group/btn inline-flex items-center space-x-2 px-8 py-4 bg-gradient-to-r from-white/20 to-white/10 hover:from-white/30 hover:to-white/20 text-white font-medium rounded-xl transition-all duration-300 transform hover:scale-105 border border-white/20 hover:border-white/30"
+                    className="btn-primary group/btn"
                   >
-                    <span>Visit Website</span>
-                    <ExternalLink className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform duration-300" />
+                    <span className="flex items-center gap-2">
+                      Visit Website
+                      <ExternalLink className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform duration-300" />
+                    </span>
                   </a>
                 </div>
               </div>
@@ -374,29 +395,34 @@ const Home = () => {
 
 
       {/* Why Choose Us Section */}
-      <section className="py-32">
-        <div className="container">
+      <section className="section-padding bg-grid">
+        <div className="container-responsive">
           <div className="text-center mb-24 animate-fade-in">
-            <h2 className="mb-12 text-white">
+            <h2 className="text-heading-lg mb-8 text-white">
               Why Choose WebCrafters?
             </h2>
-            <p className="text-lead max-w-3xl mx-auto text-gray-100">
+            <p className="text-lead max-w-4xl mx-auto text-neutral-200">
               We combine cutting-edge technology with proven strategies to deliver exceptional results.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
+          <div className="grid grid-auto-fit gap-12">
             {benefits.map((benefit, index) => {
               const IconComponent = benefit.icon
+              const iconClasses = [
+                'gradient-electric',
+                'gradient-emerald',
+                'gradient-cosmic'
+              ]
               return (
-                <div key={benefit.title} className="text-center animate-fade-in" style={{ animationDelay: `${index * 0.2}s` }}>
-                  <div className="w-20 h-20 bg-gradient-to-br from-gray-600 to-gray-700 rounded-full flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform duration-300">
-                    <IconComponent className="w-10 h-10 text-white" />
+                <div key={benefit.title} className="text-center animate-fade-in-up interactive-soft" style={{ animationDelay: `${index * 0.2}s` }}>
+                  <div className={`w-24 h-24 ${iconClasses[index % iconClasses.length]} rounded-2xl flex items-center justify-center mx-auto mb-8 shadow-glow group-hover:scale-110 transition-transform duration-300`}>
+                    <IconComponent className="w-12 h-12 text-white" />
                   </div>
-                  <h3 className="text-xl font-semibold text-white mb-6">
+                  <h3 className="text-heading-sm text-white mb-6">
                     {benefit.title}
                   </h3>
-                  <p className="text-gray-200 leading-relaxed">
+                  <p className="text-body text-neutral-300 leading-relaxed">
                     {benefit.description}
                   </p>
                 </div>
@@ -406,20 +432,28 @@ const Home = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-32">
-        <div className="container">
-          <div className="max-w-4xl mx-auto text-center animate-fade-in">
-            <h2 className="mb-12 text-white">
-              Ready to Transform Your Digital Presence?
+      {/* Enhanced CTA Section */}
+      <section className="section-padding bg-mesh relative overflow-hidden">
+        <div className="container-responsive">
+          <div className="max-w-5xl mx-auto text-center animate-fade-in-up">
+            <h2 className="text-heading-lg mb-8 text-white">
+              Ready to Transform Your 
+              <span className="gradient-text-electric block">Digital Presence?</span>
             </h2>
-            <p className="text-lead mb-16 max-w-2xl mx-auto text-gray-100">
+            <p className="text-lead mb-16 max-w-3xl mx-auto text-neutral-200">
               Let's discuss your project and create something extraordinary together.
             </p>
-            <Link to="/contact" className="group relative inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-500 hover:to-gray-600 text-white rounded-full transition-all duration-300 transform hover:scale-110 hover:shadow-2xl border-2 border-gray-500/30 shadow-lg">
-              <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" />
-              <div className="absolute inset-0 bg-gradient-to-r from-gray-400 to-gray-500 rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <Link to="/contact" className="btn-cta group">
+                <span className="relative z-10 flex items-center gap-3">
+                  Get Started Today
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                </span>
+              </Link>
+              <Link to="/offers" className="btn-secondary">
+                <span className="relative z-10">View Pricing</span>
+              </Link>
+            </div>
           </div>
         </div>
       </section>

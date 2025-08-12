@@ -12,7 +12,7 @@ const PerformanceMonitor = () => {
 
   useEffect(() => {
     // Only run in development mode
-    if (process.env.NODE_ENV !== 'development') return
+    if (import.meta.env.MODE !== 'development') return
 
     const measurePerformance = () => {
       const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming
@@ -20,12 +20,12 @@ const PerformanceMonitor = () => {
       
       const fcp = paint.find(entry => entry.name === 'first-contentful-paint')
       const lcp = performance.getEntriesByType('largest-contentful-paint')[0]
-      const cls = performance.getEntriesByType('layout-shift')[0]
+      const cls = performance.getEntriesByType('layout-shift')[0] as PerformanceEntry | undefined
 
       const pageLoadTime = navigation.loadEventEnd - navigation.loadEventStart
       const firstContentfulPaint = fcp ? fcp.startTime : 0
       const largestContentfulPaint = lcp ? lcp.startTime : 0
-      const cumulativeLayoutShift = cls ? (cls as any).value : 0
+      const cumulativeLayoutShift = (cls && 'value' in cls) ? (cls as unknown as { value: number }).value : 0
 
       setMetrics({
         pageLoadTime,
@@ -53,7 +53,7 @@ const PerformanceMonitor = () => {
   }, [])
 
   // Only show in development
-  if (process.env.NODE_ENV !== 'development' || !metrics) return null
+  if (import.meta.env.MODE !== 'development' || !metrics) return null
 
   return (
     <div className="fixed bottom-4 right-4 bg-black/80 text-white p-4 rounded-lg text-xs font-mono z-50 backdrop-blur-sm border border-white/20">

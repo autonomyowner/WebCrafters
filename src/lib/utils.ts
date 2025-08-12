@@ -14,11 +14,11 @@ export const createScrollAnimation = () => {
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('animate-fade-in')
-        ;(entry.target as HTMLElement).style.opacity = '1'
-        ;(entry.target as HTMLElement).style.transform = 'translateY(0)'
-      }
+      if (!entry.isIntersecting) return
+      const element = entry.target as HTMLElement
+      element.classList.add('animate-fade-in')
+      element.style.opacity = '1'
+      element.style.transform = 'translateY(0)'
     })
   }, observerOptions)
 
@@ -31,10 +31,11 @@ export const addScrollAnimations = () => {
   
   const elements = document.querySelectorAll('[data-scroll-animate]')
   elements.forEach((el) => {
-    ;(el as HTMLElement).style.opacity = '0'
-    ;(el as HTMLElement).style.transform = 'translateY(30px)'
-    ;(el as HTMLElement).style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out'
-    observer.observe(el)
+    const element = el as HTMLElement
+    element.style.opacity = '0'
+    element.style.transform = 'translateY(30px)'
+    element.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out'
+    observer.observe(element)
   })
 
   return observer
@@ -73,7 +74,7 @@ export const createIntersectionObserver = (
 };
 
 // Performance optimization utilities
-export const debounce = <T extends (...args: any[]) => any>(
+export const debounce = <T extends (...args: unknown[]) => unknown>(
   func: T,
   wait: number
 ): ((...args: Parameters<T>) => void) => {
@@ -84,7 +85,7 @@ export const debounce = <T extends (...args: any[]) => any>(
   };
 };
 
-export const throttle = <T extends (...args: any[]) => any>(
+export const throttle = <T extends (...args: unknown[]) => unknown>(
   func: T,
   limit: number
 ): ((...args: Parameters<T>) => void) => {

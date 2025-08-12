@@ -34,38 +34,92 @@ const Offers = () => {
 
   const services = [
     {
-      title: 'Simple Websites',
-      price: '9.000 DA', // Updated
-      features: ['Responsive design & Mobile optimization', 'SEO optimization & Analytics', 'Contact forms & Lead capture', 'Basic CMS & Content management', '2-3 pages with modern UI'],
+      title: 'Portfolio Website',
+      price: '4.000 DA',
+      originalPrice: '12.000 DA',
+      saveLabel: 'Save 8.000 DA (66%)',
+      features: [
+        'Up to 3 sections (Home, About, Contact)',
+        'Mobile‑first, lightning‑fast load speed',
+        'Contact form + WhatsApp CTA',
+        'Basic SEO + analytics setup',
+        '1 revision included'
+      ],
+      bonuses: [
+        'BONUS: Free favicon + brand color palette',
+        'BONUS: 1 year hosting included',
+        'BONUS: Launch in 72 hours guarantee'
+      ],
       icon: Globe,
-      delivery: '2-4 days',
+      delivery: '48–72 hours',
       popular: false,
-      discount: 'Get -30% discount for 5+ projects/month'
+      scarcity: 'Only 3 spots this week'
     },
     {
-      title: 'Advanced Websites',
-      price: '22.000 DA', // Updated
-      features: ['User authentication & Role management', 'Admin dashboard & Analytics', 'Database integration & API', 'Advanced forms & Validation', '5-10 pages with dynamic content'],
-      icon: Database,
-      delivery: '1-2 weeks',
-      popular: true,
-      discount: 'Get -30% discount for 5+ projects/month'
-    },
-    {
-      title: 'Full SaaS Projects',
-      price: '62.000 DA', // Updated
-      features: ['Complete web applications & Multi-user systems', 'E-commerce + Payment integration', 'Custom integrations & Third-party APIs', 'Scalable architecture & Cloud deployment', 'Advanced admin panels & Analytics'],
-      icon: Users,
-      delivery: '2-4 weeks',
-      popular: false
-    },
-    {
-      title: 'Mobile Applications',
-      price: '42.000 DA', // Updated
-      features: ['Cross-platform development (iOS/Android)', 'Native performance & Smooth animations', 'Offline capabilities & Data sync', 'App store deployment & Push notifications', 'Advanced UI/UX & User experience'],
+      title: 'QR Code Menu',
+      price: '5.000 DA',
+      originalPrice: '9.000 DA',
+      saveLabel: 'Save 4.000 DA (44%)',
+      features: [
+        'Unlimited scans & high‑resolution QR',
+        'Beautiful digital menu with photos & prices',
+        'Categories, availability & daily specials',
+        'Instant updates without reprinting',
+        'Multi‑language ready'
+      ],
+      bonuses: [
+        'BONUS: Print‑ready table stickers (PDF)',
+        'BONUS: 3 custom menu templates',
+        'BONUS: 1 year hosting + updates'
+      ],
       icon: Smartphone,
-      delivery: '3-4 weeks',
-      popular: false
+      delivery: '2–4 days',
+      popular: false,
+      scarcity: 'Only 5 restaurant slots now'
+    },
+    {
+      title: 'Site Vitrine (Business)',
+      price: '12.500 DA',
+      originalPrice: '20.000 DA',
+      saveLabel: 'Save 7.500 DA (38%)',
+      features: [
+        '4–6 pages (Home, Services, About, Contact, etc.)',
+        'CMS to edit content yourself',
+        'SEO setup + Google Analytics + Search Console',
+        'Speed optimization (90+ Lighthouse target)',
+        'WhatsApp chat & lead forms'
+      ],
+      bonuses: [
+        'BONUS: Copy assistance (500 words)',
+        'BONUS: 10 premium stock images',
+        'BONUS: 3 months priority support'
+      ],
+      icon: Database,
+      delivery: '5–7 days',
+      popular: true,
+      scarcity: 'Most Popular – fills fast'
+    },
+    {
+      title: 'E‑commerce Site',
+      price: '15.000 DA',
+      originalPrice: '30.000 DA',
+      saveLabel: 'Save 15.000 DA (50%)',
+      features: [
+        'Product catalog, cart, checkout',
+        'Orders, inventory & coupons',
+        'Payment integration + COD flow',
+        'Shipping rules & order notifications',
+        'Admin dashboard & reports'
+      ],
+      bonuses: [
+        'BONUS: 20 product uploads done‑for‑you',
+        'BONUS: 1‑month conversion optimization tweaks',
+        'BONUS: Abandoned cart email template'
+      ],
+      icon: Users,
+      delivery: '7–12 days',
+      popular: false,
+      scarcity: 'Only 2 builds at this price'
     }
   ]
 
@@ -146,14 +200,18 @@ const Offers = () => {
       <section className="py-32">
         <div className="container">
           <div className="text-center mb-24 animate-fade-in">
-            <h2 className="mb-12 text-white">
+            <h2 className="mb-4 text-white">
               Our Service Packages
             </h2>
+            <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-green-600/40 bg-green-900/20 text-green-200 mb-6">
+              <Shield className="w-4 h-4" />
+              <span className="text-sm font-semibold">No‑Risk: Pay 50% upfront, 50% on delivery + 30‑Day Bug‑Fix Guarantee</span>
+            </div>
             <p className="text-lead max-w-3xl mx-auto text-green-100">
-              Choose the perfect package for your project needs. All prices are base rates and may vary based on complexity.
+              Crafted with insane value. Transparent pricing. Fast delivery. Results guaranteed.
             </p>
             <p className="text-sm max-w-2xl mx-auto text-green-200 mt-4 font-medium">
-              One-time payment and the website is totally yours.
+              Limited weekly capacity. Lock your slot now.
             </p>
             
             {/* Domain Pricing Cards */}
@@ -188,17 +246,24 @@ const Offers = () => {
                   <div className="w-16 h-16 bg-gradient-to-br from-green-600 to-green-700 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                     <IconComponent className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-4 text-white">{service.title}</h3>
-                  <div className="text-3xl font-bold bg-gradient-to-r from-green-400 to-green-500 bg-clip-text text-transparent mb-4">
+                  <h3 className="text-xl font-semibold mb-2 text-white">{service.title}</h3>
+                  {service.originalPrice && (
+                    <div className="text-sm text-green-300 line-through opacity-70">{service.originalPrice}</div>
+                  )}
+                  <div className="text-3xl font-extrabold bg-gradient-to-r from-green-400 to-green-500 bg-clip-text text-transparent mb-1">
                     {service.price}
                   </div>
-                  <div className="text-sm text-green-300 mb-6">Delivery: {service.delivery}</div>
-                  {service.discount && (
-                    <div className="mb-4 p-2 bg-yellow-600/20 border border-yellow-500/30 rounded-lg">
-                      <p className="text-xs text-yellow-300 font-medium">{service.discount}</p>
+                  {service.saveLabel && (
+                    <div className="text-xs text-yellow-300 mb-2 font-semibold">{service.saveLabel}</div>
+                  )}
+                  <div className="text-sm text-green-300 mb-3">Delivery: {service.delivery}</div>
+                  {service.scarcity && (
+                    <div className="mb-4 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-600/20 border border-red-500/30">
+                      <Clock className="w-3.5 h-3.5 text-red-300" />
+                      <p className="text-xs text-red-200 font-semibold">{service.scarcity}</p>
                     </div>
                   )}
-                  <ul className="text-sm text-green-200 space-y-3 mb-8">
+                  <ul className="text-sm text-green-200 space-y-3 mb-4">
                     {service.features.map((feature, idx) => (
                       <li key={idx} className="flex items-center justify-center">
                         <CheckCircle className="w-4 h-4 text-green-400 mr-2 flex-shrink-0" />
@@ -206,8 +271,21 @@ const Offers = () => {
                       </li>
                     ))}
                   </ul>
+                  {service.bonuses && (
+                    <div className="mb-6 text-left bg-green-900/20 border border-green-700/40 rounded-lg p-3">
+                      <p className="text-xs font-bold text-green-300 mb-2">Value Stack:</p>
+                      <ul className="space-y-1">
+                        {service.bonuses.map((bonus, bIdx) => (
+                          <li key={bIdx} className="text-[13px] text-green-200 flex items-start">
+                            <Star className="w-3.5 h-3.5 text-yellow-300 mr-2 mt-0.5 flex-shrink-0" />
+                            {bonus}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                   <Link to="/contact" className="inline-block px-6 py-3 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-500 hover:to-green-600 text-white font-medium rounded-lg transition-all duration-300 transform hover:scale-105">
-                    Get Started
+                    Start in 24h
                   </Link>
                 </div>
               )

@@ -65,7 +65,7 @@ const LazyImage = ({
   return (
     <img
       ref={imgRef}
-      src={isInView ? src : placeholder}
+      src={isInView && !hasError ? src : placeholder}
       alt={alt}
       className={`transition-opacity duration-300 ${
         isLoaded ? 'opacity-100' : 'opacity-0'
